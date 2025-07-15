@@ -1,0 +1,322 @@
+@import "src/styles/variables";
+.simple-calendar{
+  &.window-app{
+    .fsc-main-wrapper{
+      display: flex;
+      flex-direction: column;
+      padding: $spacer-half;
+
+      .fsc-section{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        .fsc-clock-display, .fsc-calendar-display{
+          flex: 1;
+        }
+
+        &:last-child{
+          .fsc-controls {
+            margin-bottom: 0;
+          }
+        }
+      }
+      .fsc-spacer{
+        margin: 0 0 $spacer-half 0;
+        flex: 1;
+      }
+      .fsc-spacer-small{
+        height: $spacer-half;
+      }
+    }
+    .fsc-controls{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: $spacer-half;
+
+      &.fsc-unit-controls{
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: stretch;
+
+        .fsc-control-group{
+          margin-right: $spacer-quarter;
+          &:last-child{
+            margin-right: 0;
+          }
+        }
+        .fa-minus, .fa-plus{
+          font-size: pxToRem(10);
+        }
+      }
+
+      .fsc-control-group{
+        justify-content: center;
+      }
+
+      button{
+        svg{
+          height: 1.125rem;
+          margin-bottom: -$spacer-quarter;
+        }
+      }
+    }
+
+    .fsc-actions-list{
+      flex: 0 0 pxToRem(62);
+      display: flex;
+      flex-direction: column;
+      width: pxToRem(62);
+      overflow-y: auto;
+      overflow-x: hidden;
+      margin-left: $spacer-half;
+      padding: 0 $spacer-half;
+
+      button.fsc-control{
+        margin: 0 0 $spacer-half 0!important;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      .fsc-time-keeper-buttons{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin: auto 0;
+
+        .fsc-control{
+          font-size: pxToRem(12);
+          padding: 0.125rem 0;
+          margin-right: 2px;
+          margin-bottom: 0;
+
+          &:last-child{
+            margin-right: 0;
+          }
+        }
+      }
+
+      .fsc-primary-loader{
+        text-align: center;
+        margin: auto 0;
+      }
+    }
+
+    .fsc-side-drawer{
+      position: absolute;
+      top: pxToRem(30);
+      background-color: var(--side-drawer-bg-color);
+      background-image: var(--side-drawer-bg-image);
+      border: 1px solid var(--side-drawer-border-color);
+      border-image: var(--side-drawer-border-image);
+      color: var(--side-drawer-color);
+      height: 75%;
+      min-width: pxToRem(300);
+      z-index: -1;
+      box-shadow: 2px 2px pxToRem(10) #000000ab;
+      &.sc-right{
+        left: 25%;
+        border-left: 0;
+      }
+      &.sc-left{
+        right: 25%;
+        border-right: 0;
+      }
+      &.sc-down{
+        top: 25%;
+        width: 100%;
+        left: 0;
+        border-top: 0;
+      }
+      &.fsc-closed{
+        visibility: hidden;
+      }
+      &.fsc-open{
+        visibility: visible;
+        &.sc-right{
+          left: 100%;
+        }
+        &.sc-left{
+          right: 100%;
+        }
+        &.sc-down{
+          top: 100%;
+        }
+      }
+      h2{
+        border-bottom-color: var(--heading-border-color);
+        font-size: pxToRem(22);
+        font-family: var(--heading-font-family);
+        padding: $spacer-half $spacer-half 0;
+      }
+      h3{
+        font-size: pxToRem(17.5);
+        font-family: var(--heading-font-family);
+      }
+      em{
+        font-size: pxToRem(14);
+        padding: 0 $spacer-half;
+      }
+    }
+
+    .fsc-calendar-list{
+      @include scrollbar();
+      overflow-y: auto;
+
+      .fsc-calendar-display{
+        display: flex;
+        flex-direction: row;
+        border: 1px solid var(--cal-list-active-border-color);
+        border-radius: pxToRem(5);
+        margin: $spacer-half;
+        padding: $spacer-half;
+        cursor: pointer;
+        color: var(--cal-list-color);
+        &:hover{
+          background-color: var(--cal-list-bg-hover-color);
+        }
+        &.fsc-clickable{
+          cursor: pointer;
+        }
+        &.fsc-active{
+          background-color: var(--cal-list-active-bg-color);
+          &.fsc-visible{
+            background-color: var(--cal-list-active-bg-color);
+            &:hover{
+              background-color: var(--cal-list-active-bg-color);
+            }
+          }
+        }
+        &.fsc-visible{
+          background-color: var(--cal-list-visible-bg-color);
+          &:hover{
+            background-color: var(--cal-list-visible-bg-color);
+          }
+        }
+
+        .fsc-details{
+          flex: 1;
+        }
+        .fsc-calendar-name{
+          font-size: 1.125rem;
+          font-weight: 600;
+          margin-bottom: $spacer-quarter;
+        }
+        .fsc-calendar-date{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-items: center;
+          font-size: 0.75rem;
+          margin-left: $spacer-half;
+          *{
+            margin-right: $spacer-quarter;
+          }
+
+          .fsc-animated-clock{
+            svg{
+              width: pxToRem(14);
+              height: pxToRem(14);
+              fill: var(--clock-started-color);
+              stroke: var(--clock-started-color);
+            }
+          }
+        }
+        .fsc-calendar-actions{
+          display: flex;
+          flex-direction: row;
+          margin: $spacer-half (-$spacer-half) (-$spacer-half) ;
+          border-top: 1px solid var(--cal-list-active-border-color);
+
+          button{
+            flex: 1;
+            border-radius: 0;
+            box-shadow: unset;
+            margin: 0;
+            &:first-child{
+              border-bottom-left-radius: 3px;
+            }
+            &:last-child{
+              border-bottom-right-radius: 3px;
+            }
+          }
+        }
+      }
+    }
+
+    .fsc--note-list{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .fsc-note-search{
+      display: flex;
+      flex-direction: column;
+
+      .fsc-search-options-header{
+        padding: 0 $spacer-half $spacer-quarter;
+        margin: 0;
+        border-bottom: 1px solid;
+        cursor: pointer;
+      }
+
+      .fsc-search-options{
+        padding: 0 $spacer-half $spacer-half;
+        overflow: hidden;
+        border-left: 1px solid;
+        border-right: 1px solid;
+        border-bottom: 1px solid;
+        max-height: 0;
+
+        &.fsc-closed{
+          visibility: hidden;
+        }
+        &.fsc-open{
+          visibility: visible;
+          max-height: pxToRem(200);
+        }
+
+        p{
+          font-size: 0.75rem;
+          strong{
+            margin-right: $spacer-quarter;
+          }
+        }
+
+        .fsc-search-fields{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          font-size: 0.75rem;
+
+          label{
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            margin: 0 ($spacer-half * 0.5);
+            input[type="checkbox"]{
+              width: pxToRem(12);
+              height: pxToRem(12);
+              filter: unset;
+            }
+          }
+
+        }
+      }
+
+      .fsc-note-list{
+        padding-top: $spacer-half;
+      }
+    }
+
+    .fsc-hidden-label{
+      visibility: hidden;
+      display: block;
+      height: 0;
+    }
+  }
+
+}
