@@ -19,10 +19,10 @@
 		"minimum": "10",
 		"verified": "12"
 	},
-	"url": "https://github.com/vigoren/foundryvtt-simple-calendar",
-	"bugs": "https://github.com/vigoren/foundryvtt-simple-calendar/issues",
-	"readme": "https://github.com/vigoren/foundryvtt-simple-calendar/blob/main/README.md",
-	"license": "https://github.com/vigoren/foundryvtt-simple-calendar/blob/main/LICENSE",
+	"url": "https://github.com/plzpayformytaxes/simple-calendar",
+	"bugs": "https://github.com/plzpayformytaxes/simple-calendar/issues",
+	"readme": "https://github.com/plzpayformytaxes/simple-calendar/blob/main/README.md",
+	"license": "https://github.com/plzpayformytaxes/simple-calendar/blob/main/LICENSE",
 	"manifest": "#{MANIFEST}#",
 	"download": "#{DOWNLOAD}#",
 	"esmodules": [
@@ -113,23 +113,23 @@
 		},
 		{
 			"type": "cover",
-			"url": "https://raw.githubusercontent.com/vigoren/foundryvtt-simple-calendar/main/src/assets/setup-cover.png"
+			"url": "https://raw.githubusercontent.com/plzpayformytaxes/simple-calendar/main/src/assets/setup-cover.png"
 		},
 		{
 			"type": "screenshot",
-			"url": "https://raw.githubusercontent.com/vigoren/foundryvtt-simple-calendar/main/simple-calendar-docs/docs/images/sc-v2-themes.gif"
+			"url": "https://raw.githubusercontent.com/plzpayformytaxes/simple-calendar/main/simple-calendar-docs/docs/images/sc-v2-themes.gif"
 		},
 		{
 			"type": "screenshot",
-			"url": "https://raw.githubusercontent.com/vigoren/foundryvtt-simple-calendar/main/simple-calendar-docs/docs/images/sc-v2-themes-comp.gif"
+			"url": "https://raw.githubusercontent.com/plzpayformytaxes/simple-calendar/main/simple-calendar-docs/docs/images/sc-v2-themes-comp.gif"
 		},
 		{
 			"type": "screenshot",
-			"url": "https://raw.githubusercontent.com/vigoren/foundryvtt-simple-calendar/main/simple-calendar-docs/docs/images/sc-v2-theme-dark-config.png"
+			"url": "https://raw.githubusercontent.com/plzpayformytaxes/simple-calendar/main/simple-calendar-docs/docs/images/sc-v2-theme-dark-config.png"
 		},
 		{
 			"type": "screenshot",
-			"url": "https://raw.githubusercontent.com/vigoren/foundryvtt-simple-calendar/main/simple-calendar-docs/docs/images/sc-v2-theme-dark-note.png"
+			"url": "https://raw.githubusercontent.com/plzpayformytaxes/simple-calendar/main/simple-calendar-docs/docs/images/sc-v2-theme-dark-note.png"
 		}
 	],
 	"flags": {
