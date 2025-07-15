@@ -23,8 +23,8 @@
 	"bugs": "https://github.com/plzpayformytaxes/simple-calendar/issues",
 	"readme": "https://github.com/plzpayformytaxes/simple-calendar/blob/main/README.md",
 	"license": "https://github.com/plzpayformytaxes/simple-calendar/blob/main/LICENSE",
-	"manifest": "#{MANIFEST}#",
-	"download": "#{DOWNLOAD}#",
+	"manifest": "https://raw.githubusercontent.com/plzpayformytaxes/simple-calendar/refs/heads/main/src/module.json",
+	"download": "https://github.com/plzpayformytaxes/simple-calendar/archive/refs/heads/main.zip",
 	"esmodules": [
 		"./index.js"
 	],
